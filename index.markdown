@@ -7,8 +7,11 @@ Date: 2020-02-08
 
  1. Download [Docker](https://docs.docker.com/docker-for-windows/install/) and a Docker command-line tool for your system.
   >**Note:** The examples in this guide use  [Docker Compose](https://docs.docker.com/compose/). The Docker Desktop installation comes with it already installed.
+
  2. Download the [the official ownCloud Docker image](https://hub.docker.com/r/owncloud/server/).
+
  3. Create a new project directory and download [ownCloud’s docker-compose.yml file](https://raw.githubusercontent.com/owncloud/docs/master/modules/admin_manual/examples/installation/docker/docker-compose.yml) into the directory.
+
  4. Create a `.env` configuration file.
 >**Note:** The following settings are required.
 >
@@ -19,6 +22,7 @@ Date: 2020-02-08
 |`ADMIN_USERNAME`| The admin username|`admin`|
 |`ADMIN_PASSWORD`| The admin password |`admin` |
 |`HTTP_PORT`| The HTTP port to bind to |`8080`|
+
  5. Build and start the container in your Docker command-line tool.
       ```
     # Create a new project directory
@@ -41,6 +45,7 @@ Date: 2020-02-08
     # Build and start the container
     docker-compose up -d
 ```
+
  6. Run `docker-compose ps` to verify that all the containers have successfully started.
  >**Note:** Your output should be similar to the following example.
     ```
@@ -57,6 +62,7 @@ That's it. Your installation is now complete.  Wait a few minutes for ownCloud t
 ## Log in to OwnCloud
 ![The ownCloud UI via Docker](https://doc.owncloud.com/server/10.4/admin_manual/_images/docker/owncloud-ui-login.png)
  1. Open a web browser and go to `http://localhost/8080`
+
  2. Enter the username and password you stored in `.env` file earlier.
 
  You are now up and running and can begin to use ownCloud.
@@ -64,9 +70,13 @@ That's it. Your installation is now complete.  Wait a few minutes for ownCloud t
 ## Add a User Account
 
  1. Log in as **admin** to your ownCloud account.
+
  2. Select **users** in the top menu.
+
  3. Enter the new user’s **Login Name** and  **E-Mail**.
+
  4. Assign **Group** membership (optional).
+
  5. Click the **Create** button.
  ![image](https://doc.owncloud.com/server/10.3/admin_manual/_images/configuration/user/users-page-new-user.png)
 
@@ -77,13 +87,19 @@ That's it. Your installation is now complete.  Wait a few minutes for ownCloud t
 ## Access the Desktop Client
 
 1.  Go to the  [ownCloud download page](https://owncloud.com/download/#desktop-clients) and download the desktop client for your system.
+
 2.  Run the program.
+
 3.  Enter the server address configured (http://localhost/8080) and click **Next**.  
     ![ownCloud client configuration](https://docs.bitnami.com/images/img/apps/owncloud/configure-client-1.png)
+
 4.  Enter a valid username and the given password.
+
 5.  Specify whether to **Sync everything from server** or **Choose what to sync**.
+
 6.  Enter a location for your local files to be stored and choose whether to **Keep local data** or **Start a clean sync**.
 ![ownCloud client configuration](https://docs.bitnami.com/images/img/apps/owncloud/configure-client-3.png)
+
 7.  Click **Connect** and then **Finish** to save your settings.
 
 ## Access the Mobile Client
